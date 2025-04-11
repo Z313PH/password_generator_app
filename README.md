@@ -17,9 +17,8 @@ A simple Ruby on Rails web app that generates secure passwords based on user-sel
 - ERB templates
 
 ## 🚀 Run Locally
-
+Clone the repo
 ```bash
-git clone https://github.com/eliewamana/password-generator-rails.git
 cd password-generator-rails
 bundle install
 rails server
