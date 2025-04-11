@@ -1,0 +1,31 @@
+<h1>Password Generator</h1>
+
+<%= form_with url: "/generate", method: :post do %>
+  <div>
+    <label>Password length:</label>
+    <%= number_field_tag :length, 12, min: 4, max: 64 %>
+  </div>
+
+  <div>
+    <%= check_box_tag :use_upper %>
+    <label>Include uppercase letters</label>
+  </div>
+
+  <div>
+    <%= check_box_tag :use_numbers %>
+    <label>Include numbers</label>
+  </div>
+
+  <div>
+    <%= check_box_tag :use_special %>
+    <label>Include special characters</label>
+  </div>
+
+  <%= submit_tag "Generate Password" %>
+<% end %>
+
+<% if @password %>
+  <h2>Your Generated Password:</h2>
+  <p style="font-weight: bold; font-size: 1.2rem;"><%= @password %></p>
+<% end %>
+
