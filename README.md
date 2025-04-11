@@ -1,24 +1,26 @@
-# README
+# 🔐 Password Generator (Rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Ruby on Rails web app that generates secure passwords based on user-selected options.
 
-Things you may want to cover:
+## ✨ Features
 
-* Ruby version
+- Choose password length
+- Optionally include:
+  - Uppercase letters
+  - Numbers
+  - Special characters
 
-* System dependencies
+## 🛠 Tech
 
-* Configuration
+- Ruby 3.2.2
+- Rails 7
+- ERB templates
 
-* Database creation
+## 🚀 Run Locally
 
-* Database initialization
+```bash
+git clone https://github.com/eliewamana/password-generator-rails.git
+cd password-generator-rails
+bundle install
+rails server
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

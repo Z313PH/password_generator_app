@@ -1,6 +1,6 @@
 <h1>Password Generator</h1>
 
-<%= form_with url: "/generate", method: :post do %>
+<%= form_with url: "/generate", method: :post, data: { turbo: false } do %>
   <div>
     <label>Password length:</label>
     <%= number_field_tag :length, 12, min: 4, max: 64 %>
@@ -24,8 +24,8 @@
   <%= submit_tag "Generate Password" %>
 <% end %>
 
-<% if @password %>
+<% if params[:password].present? %>
   <h2>Your Generated Password:</h2>
-  <p style="font-weight: bold; font-size: 1.2rem;"><%= @password %></p>
+  <p style="font-weight: bold; font-size: 1.2rem;"><%= params[:password] %></p>
 <% end %>
 
