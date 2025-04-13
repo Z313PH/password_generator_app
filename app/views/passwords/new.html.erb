@@ -25,7 +25,14 @@
 <% end %>
 
 <% if params[:password].present? %>
-  <h2>Your Generated Password:</h2>
-  <p style="font-weight: bold; font-size: 1.2rem;"><%= params[:password] %></p>
+  <div class="password-result">
+    <h2>Your Generated Password:</h2>
+    <p><%= params[:password] %></p>
+
+    <div class="strength-indicator <%= params[:strength].downcase.gsub(" ", "-") %>">
+      <strong>Strength:</strong> <%= params[:strength] %>
+    </div>
+  </div>
 <% end %>
+
 
