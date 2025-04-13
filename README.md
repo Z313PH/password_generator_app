@@ -23,3 +23,15 @@ cd password-generator-rails
 bundle install
 rails server
 
+## ✅ Testing
+
+This project uses **RSpec** for testing the application's core logic, including password generation and file-based storage.
+
+### 🧪 Setup
+
+To install and set up RSpec:
+
+```bash
+bundle install
+rails generate rspec:install
+bundle exec rspec
