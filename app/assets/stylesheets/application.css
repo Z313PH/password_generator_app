@@ -8,3 +8,106 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .header {
+    background-color: #007bff; /* Bootstrap blue */
+    color: white;
+    padding: 1.5rem 1rem;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+  }
+  
+ body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  form div {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="submit"] {
+    background: #007bff;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background: #0056b3;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  .password-result-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #e9ecef;
+    border-radius: 8px;
+    gap: 1rem;
+    flex-wrap: wrap; /* Wraps on mobile */
+  }
+  
+  .generated-password {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  
+  .strength-indicator {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .strength-indicator.weak {
+    background-color: #f8d7da;
+    color: #842029;
+  }
+  
+  .strength-indicator.moderate {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .strength-indicator.strong {
+    background-color: #d1e7dd;
+    color: #0f5132;
+  }
+  
+  .strength-indicator.very-strong {
+    background-color: #cfe2ff;
+    color: #084298;
+  }
+  

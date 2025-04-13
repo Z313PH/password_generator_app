@@ -1,4 +1,7 @@
-<h1>Password Generator</h1>
+<div class="header">
+  <h1>Password Generator</h1>
+</div>
+
 
 <%= form_with url: "/generate", method: :post, data: { turbo: false } do %>
   <div>
@@ -25,14 +28,16 @@
 <% end %>
 
 <% if params[:password].present? %>
-  <div class="password-result">
-    <h2>Your Generated Password:</h2>
-    <p><%= params[:password] %></p>
+  <div class="password-result-flex">
+    <div class="generated-password">
+      <strong>Password:</strong> <%= params[:password] %>
+    </div>
 
     <div class="strength-indicator <%= params[:strength].downcase.gsub(" ", "-") %>">
       <strong>Strength:</strong> <%= params[:strength] %>
     </div>
   </div>
 <% end %>
+
 
 
