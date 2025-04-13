@@ -22,6 +22,7 @@ Clone the repo
 cd password-generator-rails
 bundle install
 rails server
+```
 
 ## ✅ Testing
 
