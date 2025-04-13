@@ -111,3 +111,54 @@
     color: #084298;
   }
   
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  th {
+    background-color: #e9ecef;
+    color: black;
+  }
+  
+  td.weak {
+    color: #842029;
+    font-weight: bold;
+  }
+  
+  td.moderate {
+    color: #856404;
+    font-weight: bold;
+  }
+  
+  td.strong {
+    color: #0f5132;
+    font-weight: bold;
+  }
+  
+  td.very-strong {
+    color: #084298;
+    font-weight: bold;
+  }
+  
+  .copy-button {
+    background-color: transparent;
+    border: none;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    color: #007bff;
+  }
+  

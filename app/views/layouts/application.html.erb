@@ -28,3 +28,18 @@
     <%= yield %>
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        navigator.clipboard.writeText(button.dataset.password);
+        button.textContent = "✔ Copied!";
+        setTimeout(() => {
+          button.textContent = "Copy";
+        }, 1500);
+      });
+    });
+  });
+</script>
+

@@ -39,5 +39,29 @@
   </div>
 <% end %>
 
+<h2>History</h2>
+<table style="width: 100%; border-collapse: collapse;">
+  <tr style="background-color: #f0f0f0;">
+    <th>Date</th>
+    <th>Password</th>
+    <th>Strength</th>
+    <th></th>
+  </tr>
+  <% JSON.parse(File.read(Rails.root.join("Database", "db.json"))).reverse.each do |entry| %>
+   <tr>
+      <td><%= entry["date"] %></td>
+      <td><%= entry["password"] %></td>
+      <td class="<%= entry["strength"].downcase.gsub(" ", "-") %>">
+        <%= entry["strength"] %>
+
+        <!-- Copy Button -->
+        <button class="copy-button" data-password="<%= entry["password"] %>">Copy</button>
+      </td>
+      <td>
+        <%= button_to "🗑️", delete_password_path(entry["id"]), method: :delete, data: { turbo: false }, style: "background: none; border: none; font-size: 1.2rem; cursor: pointer;" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
 

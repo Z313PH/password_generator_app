@@ -1,7 +1,21 @@
+require 'json'
+
 class PasswordsController < ApplicationController
-  def new
-    puts "🎉 FORM SUBMITTED!"
+
+  DB_PATH = Rails.root.join('Database', 'db.json')
+  def load_passwords
+    JSON.parse(File.read(DB_PATH))
+  rescue 
+    []
   end
+
+  def save_passwords(data)
+    File.write(DB_PATH, JSON.pretty_generate(data))
+  end
+
+  # def new
+  #   puts "🎉 FORM SUBMITTED!"
+  # end
 
   def create
     length = params[:length].to_i
@@ -27,7 +41,24 @@ class PasswordsController < ApplicationController
             when 3 then "Strong"
             else "Very Strong"
             end
+
+    data = load_passwords
+    data << {
+      "id" => SecureRandom.uuid,
+      "date" => Time.now.strftime("%Y-%m-%d"),
+      "password" => password,
+      "strength" => @strength
+    }
+    save_passwords(data)
     redirect_to root_path(password: password, strength: @strength)
   end
+
+  def destroy
+    data = load_passwords
+    id = params[:id]
+    data.reject! { |entry| entry["id"] == id }
+    save_passwords(data)
+    redirect_to root_path
+  end
 end
-# This controller handles the password generation logic. It has two actions:
+# This controller handles the password generation logic, it can also save, and delete generated passords.
