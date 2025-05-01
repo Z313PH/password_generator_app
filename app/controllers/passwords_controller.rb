@@ -38,7 +38,8 @@ class PasswordsController < ApplicationController
                 else "Very Strong"
                 end
 
-    Password.create(password: password, strength: @strength)
+    @password = Password.create(password: password, strength: @strength)
+
     
     redirect_to root_path(password: password, strength: @strength)
   end
