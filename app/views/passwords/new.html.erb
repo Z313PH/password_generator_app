@@ -2,8 +2,8 @@
   <h1>Password Generator</h1>
 </div>
 
+<%= form_with model: Password.new do |form| %>
 
-<%= form_with url: "/generate", method: :post, data: { turbo: false } do %>
   <div>
     <label>Password length:</label>
     <%= number_field_tag :length, 12, min: 4, max: 64 %>
@@ -47,21 +47,15 @@
     <th>Strength</th>
     <th></th>
   </tr>
-  <% JSON.parse(File.read(Rails.root.join("Database", "db.json"))).reverse.each do |entry| %>
-   <tr>
-      <td><%= entry["date"] %></td>
-      <td><%= entry["password"] %></td>
-      <td class="<%= entry["strength"].downcase.gsub(" ", "-") %>">
-        <%= entry["strength"] %>
-
-        <!-- Copy Button -->
-        <button class="copy-button" data-password="<%= entry["password"] %>">Copy</button>
-      </td>
-      <td>
-        <%= button_to "🗑️", delete_password_path(entry["id"]), method: :delete, data: { turbo: false }, style: "background: none; border: none; font-size: 1.2rem; cursor: pointer;" %>
-      </td>
+  <% Password.order(created_at: :desc).each do |p| %>
+    <tr>
+      <td><%= p.created_at.strftime("%m/%d/%Y") %></td>
+      <td><%= p.password %></td>
+      <td class="<%= p.strength.downcase %>"><%= p.strength %></td>
+      <td><%= link_to "🗑", password_path(p), method: :delete, data: { confirm: "Are you sure?" } %></td>
     </tr>
   <% end %>
+  
 </table>
 
 

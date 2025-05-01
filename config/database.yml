@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: eliewamana
+  password:
+  host: localhost
+
+development:
+  <<: *default
+  database: password_generator_dev
+
+test:
+  <<: *default
+  database: password_generator_test
+
+production:
+  <<: *default
+  database: password_generator_prod

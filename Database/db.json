@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "0a6187c5-f6de-4273-8330-0962184ffcbe",
+    "date": "2025-04-12",
+    "password": "zfstautifkgc",
+    "strength": "Weak"
+  },
+  {
+    "id": "7fb7c5dd-7ddb-4010-b6e8-571d7a3d4782",
+    "date": "2025-04-12",
+    "password": "KQsdEU*c",
+    "strength": "Strong"
+  },
+  {
+    "id": "1f09bcf1-64b4-4375-aa4d-aaafe4a8b0ad",
+    "date": "2025-04-13",
+    "password": "oFjJYrFFwIlC",
+    "strength": "Moderate"
+  },
+  {
+    "id": "c0e24340-464f-4655-abb9-ec5d5b973e80",
+    "date": "2025-04-14",
+    "password": "crhdznnmepre",
+    "strength": "Weak"
+  },
+  {
+    "id": "8d5c3ed5-8b6b-4ce2-830c-d3a1d5a420df",
+    "date": "2025-04-27",
+    "password": "csgqgpsrdkwy",
+    "strength": "Weak"
+  }
+]
